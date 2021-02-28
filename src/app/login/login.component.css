@@ -1,0 +1,107 @@
+/* Login Container css starts */
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+img.flightImage {
+    width: 40%;
+    position: absolute;
+    top: -61px;
+    left: 0;
+    animation: flyPlane 2s ease-in-out 0.1s;
+    transition: all 1s ease;
+}
+
+.loginContainer form {
+    padding: 30px;
+    width: 50%;
+    max-width: 400px;
+    background: white;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+    border-radius: 10px;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.loginContainer form h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.loginContainer label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.loginContainer input {
+    padding: 10px 13px;
+    border: 2px solid #808080bf;
+    font-size: 12px;
+    font-weight: 600;
+    width: 100%;
+    color: gray;
+}
+
+.field {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form button {
+    color: white;
+    background: #00a9d8;
+    outline: none;
+    border: none;
+    max-width: 230px;
+    padding: 6px 40px;
+    font-weight: 700;
+    margin: 20px 20px 0 0;
+    border-radius: 5px;
+    min-height: 40px;
+    border: 2px solid #00a9d8;
+}
+
+form button:hover {
+    background: white;
+    color: #00a9d8;
+    cursor: pointer;
+    border: 2px solid #00a9d8;
+}
+
+/* Mobile View Starts */
+@media only screen and (max-width: 768px) {
+    .loginContainer form {
+        width: 90%;
+    }
+}
+
+/* Mobile view ends */
+
+/* animation */
+
+@keyframes flyPlane {
+    0% {
+        top: 100%;
+        left: 0;
+    }
+
+    50% {
+        top: 30%;
+        left: 40%;
+    }
+
+    100% {
+        top: -61px;
+        left: 0;
+    }
+}

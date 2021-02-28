@@ -1,0 +1,36 @@
+<!-- Common page header -->
+<header>
+    <div class="logo">
+      <img src="../../assets/flight-book-logo.png" alt="Flight Book Logo" width="140px" />
+      <h1>Book Your Flight</h1>
+    </div>
+    <div class="App_Menu">
+      <!-- Hamburger icon for mobile view -->
+      <div class="mobileViewIcon">
+        <button id="hamburgerIcon" type="button" class="hamburgerIcon" (click)="showMenuHandler()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
+      <nav class="dashboardNavigation">
+        <a href="">Home</a>
+        <a href="">Contact Us</a>
+        <a href="">About Us</a>
+        <a href="">Order History</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu Drawer -->
+  <div class="customDrawer" [ngClass]="{'Show': showMenu}" id="customDrawer">
+    <nav>
+      <h4>Menus</h4>
+      <a href="">Home</a>
+      <a href="">Contact Us</a>
+      <a href="">About Us</a>
+    </nav>
+    <button id="hideDrawer">
+      Close
+    </button>
+  </div>

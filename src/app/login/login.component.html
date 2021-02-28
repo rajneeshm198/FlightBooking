@@ -1,0 +1,19 @@
+<!-- Login page container -->
+<div class="loginContainer">
+    <img class="flightImage" src="./assets/flight.png" alt="Flight" />
+    <form method="POST" ngForm>
+        <h3>Login</h3>
+        <div class="field">
+            <label>User</label>
+            <input type="text" name="user" placeholder="Username" required [(ngModel)]="username">
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="pass" placeholder="Password" required [(ngModel)]="password">
+        </div>
+        <button type="submit">
+            <i class="unlock alternate icon"></i>
+            Login
+        </button>
+    </form>
+</div>

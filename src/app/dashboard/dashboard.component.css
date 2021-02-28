@@ -1,0 +1,233 @@
+.dashboard {
+    width: 70%;
+    background: white;
+    margin: auto;
+    height: auto;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+    border-radius: 10px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.selectFlight {
+    width: 90%;
+    margin: 30px auto;
+    height: auto;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+    border-radius: 10px;
+    background: #f0f2f5;
+    position: relative;
+    top: -85px;
+    padding: 20px;
+}
+
+.dashboard h1 {
+    color: black;
+    margin: 20px;
+}
+
+/* Flight Selector starts */
+
+.selectFlightFilter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.destionation {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.address {
+    padding: 13px 20px;
+    background: white;
+    margin: 10px 15px;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.address h5,
+.travelDate h5 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.city {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.country {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.travelDate {
+    flex: 1;
+    text-align: center;
+}
+
+.travelDate input {
+    padding: 10px 20px;
+    border: 2px solid #88cbe1;
+    outline: none;
+}
+
+button.searchFlight {
+    position: absolute;
+    right: -54px;
+    padding: 10px 20px;
+    background: #00a9d87d;
+    font-weight: bold;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+}
+
+/* Flight Selector ends */
+
+/* Flight List CSS Starts */
+
+.flightLists {
+    width: 90%;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+    display: none;
+}
+
+.flightLists.show {
+    display: block;
+}
+
+.flightLists p {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.flightLists div p:first-child {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.flightLists div p:last-child {
+    font-size: 12px;
+}
+
+.section.flightLists {
+    margin-top: 183px;
+}
+
+.flightDetailsContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 20px;
+    background: #f0f2f5;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+}
+
+.flightNameDetails {
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flightTimeDetails {
+    flex: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashed {
+    width: 100px;
+    height: 2px;
+    background: red;
+}
+
+.duration {
+    flex: 30%;
+    text-align: center;
+}
+
+.flightLists button {
+    flex: 20%;
+    padding: 15px 20px;
+    background: #62cae7;
+    font-weight: bold;
+}
+
+.flightName {
+    margin-left: 13px;
+}
+
+/* Flight List CSS Ends */
+
+.showInput {
+    margin-top: 20px;
+}
+
+.showInput input {
+    width: 100%;
+}
+
+/* Dashboard mobile view starts */
+
+@media only screen and (max-width: 768px) {
+    .dashboard {
+        width: 95%;
+    }
+
+    .selectFlight {
+        height: auto;
+        padding: 10px 10px 20px 10px;
+    }
+
+    .selectFlightFilter {
+        flex-direction: column;
+    }
+
+    .destionation {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .address {
+        width: 100%;
+    }
+
+    .travelDate {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .travelDate input {
+        width: 100%;
+    }
+
+    button.searchFlight {
+        right: unset;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .flightDetailsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .flightNameDetails,
+    .flightTimeDetails,
+    .duration,
+    .flightLists button {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+/* Dashboard mobile view ends */
