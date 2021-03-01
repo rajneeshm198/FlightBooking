@@ -1,0 +1,80 @@
+
+
+.bookFlightContainer {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+}
+
+.flightDetailsContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 20px;
+    background: #f0f2f5;
+    margin: 0 auto 30px;
+}
+
+.flightNameDetails {
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flightName {
+    margin-left: 13px;
+}
+
+.flightTimeDetails {
+    flex: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashed {
+    width: 100px;
+    height: 2px;
+    background: red;
+}
+
+.duration {
+    flex: 30%;
+    text-align: center;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+button {
+    flex: 20%;
+    padding: 15px 20px;
+    background: #62cae7;
+    font-weight: bold;
+}
+
+div p:first-child {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+div p:last-child {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .flightDetailsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .flightNameDetails,
+    .flightTimeDetails,
+    .duration,
+    .flightLists button {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}

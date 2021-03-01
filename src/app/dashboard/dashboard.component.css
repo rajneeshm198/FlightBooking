@@ -7,11 +7,7 @@
     border-radius: 10px;
     position: relative;
     margin-top: 50px;
-}
-
-.bookFlightContainer {
-    margin-bottom: 20px;
-    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+    padding-bottom: 35px;
 }
 
 .selectFlight {
@@ -125,49 +121,11 @@ button.searchFlight {
     margin-top: 183px;
 }
 
-.flightDetailsContainer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 30px 20px;
-    background: #f0f2f5;
-    margin: 0 auto 30px;
-}
-
-.flightNameDetails {
-    flex: 0 0 15%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.flightTimeDetails {
-    flex: 40%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.dashed {
-    width: 100px;
-    height: 2px;
-    background: red;
-}
-
-.duration {
-    flex: 30%;
-    text-align: center;
-}
-
 .flightLists button {
     flex: 20%;
     padding: 15px 20px;
     background: #62cae7;
     font-weight: bold;
-}
-
-.flightName {
-    margin-left: 13px;
 }
 
 /* Flight List CSS Ends */
@@ -220,14 +178,6 @@ button.searchFlight {
         margin-top: 30px;
     }
 
-    .flightDetailsContainer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .flightNameDetails,
-    .flightTimeDetails,
-    .duration,
     .flightLists button {
         margin-bottom: 20px;
         width: 100%;

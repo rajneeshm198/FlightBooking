@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookFlightComponent } from './book-flight/book-flight.component';
+import { FlightDetailsComponent } from './flight-details/flight-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookFlightComponent } from './book-flight/book-flight.component';
     LoginComponent,
     DashboardComponent,
     FooterComponent,
-    BookFlightComponent
+    BookFlightComponent,
+    FlightDetailsComponent
   ],
   imports: [
     BrowserModule,

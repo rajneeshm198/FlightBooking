@@ -10,7 +10,6 @@ export class DashboardComponent implements OnInit {
   showFlights: boolean = false;
   fromDestination: string = 'From';
   toDestination: string = 'To';
-  showBookingForm: boolean = false;
 
   constructor() { }
 
@@ -19,14 +18,6 @@ export class DashboardComponent implements OnInit {
 
   showFlightsHandler(show: boolean) {
     this.showFlights = show;
-  }
-
-  showFormHandler(val: boolean) {
-    this.showBookingForm = val;
-  }
-
-  hideBookingFormHandler(val: boolean) {
-    this.showBookingForm = val;
   }
 
 }
