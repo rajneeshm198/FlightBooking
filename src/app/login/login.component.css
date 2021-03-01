@@ -78,6 +78,11 @@ form button:hover {
     border: 2px solid #00a9d8;
 }
 
+.loginFailed {
+    color: red;
+    font-weight: bold;
+}
+
 /* Mobile View Starts */
 @media only screen and (max-width: 768px) {
     .loginContainer form {

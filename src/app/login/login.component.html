@@ -1,7 +1,7 @@
 <!-- Login page container -->
 <div class="loginContainer">
     <img class="flightImage" src="./assets/flight.png" alt="Flight" />
-    <form method="POST" ngForm>
+    <form method="POST" ngForm (submit)="handleLogin()">
         <h3>Login</h3>
         <div class="field">
             <label>User</label>
@@ -15,5 +15,6 @@
             <i class="unlock alternate icon"></i>
             Login
         </button>
+        <p *ngIf="loginSuccessful === false" class="loginFailed">{{failedMessage}}</p>
     </form>
 </div>

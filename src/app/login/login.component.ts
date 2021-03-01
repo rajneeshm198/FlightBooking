@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticateService } from '../services/authenticate.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  username: string = 'test@gmail.com';
-  password: string = 'test';
+  username: string = '';
+  password: string = '';
 
-  constructor() { }
+  loginSuccessful: boolean | null = null;
+  failedMessage: string = '';
+
+  constructor(
+    private _authenticateSerivce: AuthenticateService,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  handleLogin(): void {
+    console.log(this.username);
+    console.log(this.password);
+    this._authenticateSerivce.getUser(this.username).subscribe((res: any) => {
+      console.log(res);
+      if (this.password === res.password) {
+        this.loginSuccessful = true;
+        this.loginSuccessful = true;
+        this.failedMessage = '';
+      } else {
+        this.loginSuccessful = false;
+        this.failedMessage = 'Username or password not correct';
+      }
+    },
+    (error) => {
+      console.log(error);
+      this.loginSuccessful = false;
+      this.failedMessage = 'User does not exist. Please register';
+    });
   }
 
 }
