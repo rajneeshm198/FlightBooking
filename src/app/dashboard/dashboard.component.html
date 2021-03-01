@@ -1,25 +1,27 @@
 <section class="dashboard">
     <div class="selectFlight">
-      <form onsubmit="return handleFormSubmit()">
+      <form ngForm>
         <h1>Travel with Ease</h1>
         <div class="selectFlightFilter">
           <div class="destionation">
 
             <div class="address">
               <h5>From</h5>
-              <div class="city">Noida</div>
+              <div class="city">{{fromDestination}}</div>
               <div class="country">Uttar Pradesh, India</div>
               <div class="showInput">
-                <input required type="text" placeholder="From" />
+                <!-- Two way binding not working -->
+                <input required type="text" placeholder="From" [(ngModel)]="fromDestination" />
               </div>
             </div>
             <div class="directionIcon"></div>
             <div class="address">
               <h5>To</h5>
-              <div class="city">Banglore</div>
+              <div class="city">{{toDestination}}</div>
               <div class="country">Karnatka, India</div>
               <div class="showInput">
-                <input required type="text" placeholder="To" />
+                <!-- Two way binding not working -->
+                <input required type="text" placeholder="To" [(ngModel)]="toDestination" />
               </div>
             </div>
           </div>
@@ -28,37 +30,42 @@
             <input type="date" required />
           </div>
         </div>
-        <button id="showFlight" class="searchFlight">Search Flight</button>
+        <!-- onsubmit="return showFlightsHandler(true)" -->
+        <button type="submit" id="showFlight" class="searchFlight" (click)="showFlightsHandler(true)">Search Flight</button>
       </form>
     </div>
     <!-- Dashboard flights list section starts -->
-    <section id="flightList" class="flightLists show">
-      <div class="flightDetailsContainer">
-        <div class="flightNameDetails">
-          <div class="flightLogo">
-            <img src="./assets//airasialogo.png" width="20" alt="Air Asia" />
+    <section id="flightList" class="flightLists" [ngClass]="{'show': showFlights}">
+      <div class="bookFlightContainer">
+        <div class="flightDetailsContainer">
+          <div class="flightNameDetails">
+            <div class="flightLogo">
+              <img src="./assets//airasialogo.png" width="20" alt="Air Asia" />
+            </div>
+            <div class="flightName">
+              <p>Air Asia</p>
+              <p>I5-314</p>
+            </div>
           </div>
-          <div class="flightName">
-            <p>Air Asia</p>
-            <p>I5-314</p>
+          <div class="flightTimeDetails">
+            <div class="flightTime">
+              <p>5:45</p>
+              <p>Noida</p>
+            </div>
+            <div class="dashed"></div>
+            <div class="flightTime">
+              <p>5:45</p>
+              <p>Banglore</p>
+            </div>
           </div>
+          <div class="duration">
+            <p>2h 10m</p>
+            <p>Non Stop</p>
+          </div>
+          <button type="button">Book</button>
         </div>
-        <div class="flightTimeDetails">
-          <div class="flightTime">
-            <p>5:45</p>
-            <p>Noida</p>
-          </div>
-          <div class="dashed"></div>
-          <div class="flightTime">
-            <p>5:45</p>
-            <p>Banglore</p>
-          </div>
-        </div>
-        <div class="duration">
-          <p>2h 10m</p>
-          <p>Non Stop</p>
-        </div>
-        <button type="button">Book</button>
+        <app-book-flight></app-book-flight>
+        
       </div>
       <!-- Second item -->
       <div class="flightDetailsContainer">

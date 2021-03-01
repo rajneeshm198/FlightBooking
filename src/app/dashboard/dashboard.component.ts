@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  showFlights: boolean = false;
+  fromDestination: string = 'From';
+  toDestination: string = 'To';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showFlightsHandler(show: boolean) {
+    this.showFlights = show;
   }
 
 }

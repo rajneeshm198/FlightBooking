@@ -9,6 +9,11 @@
     margin-top: 50px;
 }
 
+.bookFlightContainer {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+}
+
 .selectFlight {
     width: 90%;
     margin: 30px auto;
@@ -127,7 +132,6 @@ button.searchFlight {
     padding: 30px 20px;
     background: #f0f2f5;
     margin: 0 auto 30px;
-    border-radius: 10px;
 }
 
 .flightNameDetails {

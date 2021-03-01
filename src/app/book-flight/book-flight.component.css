@@ -1,0 +1,70 @@
+/* Flight book form starts */
+
+.flightBookForm {
+    width: 100%;
+    padding: 0 20px 20px;
+    background: white;
+}
+
+.selectUsers,
+.flightCost {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.selectUsers input {
+    margin-left: 30px;
+}
+
+.flightCost {
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.confirmFlightBooking {
+    margin: 20px 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 22px;
+    color: #62cae7;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+button {
+    padding: 15px 20px;
+    background: #62cae7;
+    font-weight: bold;
+}
+
+/* Book flight form ends */
+
+/* User Details Form start */
+
+.primaryUserDetailsForm {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f0f2f5;
+}
+
+.primaryUserDetailsForm h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+form.formField {
+    padding: 0 20px;
+    flex: 0 30%;
+}
+
+/* User Details Form ends */

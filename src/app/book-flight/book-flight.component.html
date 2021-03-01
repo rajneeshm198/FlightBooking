@@ -1,0 +1,37 @@
+<div class="flightBookForm" >
+    <h4>Book for your Flight</h4>
+    <div class="selectUsers">
+        <h5>Select Number of Users</h5>
+        <input type="number" value="1" />
+        <div class="flightCost">
+            <h5>Total Cost: </h5>
+            <div class="price">${{5000*2}}</div>
+        </div>
+    </div>
+    <div class="userDetailsForm">
+        <div class="primaryUserDetailsForm">
+            <h4>Primary User Details</h4>
+            <form ngForm>
+                <div class="formField">
+                    <h5>Name</h5>
+                    <input type="text" required />
+                </div>
+                <div class="formField">
+                    <h5>Age</h5>
+                    <input type="number" required />
+                </div>
+                <div class="formField">
+                    <h5>Email</h5>
+                    <input type="email" required />
+                </div>
+                <div class="formField">
+                    <h5>Contact Number</h5>
+                    <input type="tel" required />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="confirmFlightBooking">
+        <button type="button">Confirm Booking</button>
+    </div>
+</div>
