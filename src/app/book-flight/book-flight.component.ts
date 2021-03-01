@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-book-flight',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookFlightComponent implements OnInit {
 
-  constructor() { }
+  @Input() showBookingForm: boolean;
+  constructor() {
+    this.showBookingForm = false;
+   }
 
   ngOnInit(): void {
   }

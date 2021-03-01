@@ -62,9 +62,9 @@
             <p>2h 10m</p>
             <p>Non Stop</p>
           </div>
-          <button type="button">Book</button>
+          <button type="button" (click)="showFormHandler(true)">Book</button>
         </div>
-        <app-book-flight></app-book-flight>
+        <app-book-flight [showBookingForm]="showBookingForm"></app-book-flight>
         
       </div>
       <!-- Second item -->
