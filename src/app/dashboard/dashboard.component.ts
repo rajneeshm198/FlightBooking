@@ -25,4 +25,8 @@ export class DashboardComponent implements OnInit {
     this.showBookingForm = val;
   }
 
+  hideBookingFormHandler(val: boolean) {
+    this.showBookingForm = val;
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-book-flight',
@@ -8,11 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BookFlightComponent implements OnInit {
 
   @Input() showBookingForm: boolean;
+  @Output() hideFlightBookForm = new EventEmitter<boolean>();
   constructor() {
     this.showBookingForm = false;
    }
 
   ngOnInit(): void {
+  }
+
+  hideFlightBookFormHandler() {
+    this.hideFlightBookForm.emit(false);
   }
 
 }
