@@ -1,6 +1,6 @@
 <section class="dashboard">
     <div class="selectFlight">
-      <form ngForm>
+      <form ngNativeValidate ngForm (ngSubmit)="showFlightsHandler(true)">
         <h1>Travel with Ease</h1>
         <div class="selectFlightFilter">
           <div class="destionation">
@@ -10,8 +10,7 @@
               <div class="city">{{fromDestination}}</div>
               <div class="country">Uttar Pradesh, India</div>
               <div class="showInput">
-                <!-- Two way binding not working -->
-                <input required type="text" placeholder="From" [(ngModel)]="fromDestination" />
+                <input required type="text" placeholder="From" name="fromDestination" [(ngModel)]="fromDestination" />
               </div>
             </div>
             <div class="directionIcon"></div>
@@ -21,7 +20,7 @@
               <div class="country">Karnatka, India</div>
               <div class="showInput">
                 <!-- Two way binding not working -->
-                <input required type="text" placeholder="To" [(ngModel)]="toDestination" />
+                <input required type="text" placeholder="To" name="toDestination" [(ngModel)]="toDestination" />
               </div>
             </div>
           </div>
@@ -31,11 +30,12 @@
           </div>
         </div>
         <!-- onsubmit="return showFlightsHandler(true)" -->
-        <button type="submit" id="showFlight" class="searchFlight" (click)="showFlightsHandler(true)">Search Flight</button>
+        <button type="submit" id="showFlight" class="searchFlight" (click)="showNormalFlights()">Search Normal Flight</button>
+        <button type="submit" id="showFlight" class="searchBusinessFlight" (click)="showBusinessFlights()">Search Business Flight</button>
       </form>
     </div>
     <!-- Dashboard flights list section starts -->
     <section id="flightList" class="flightLists" [ngClass]="{'show': showFlights}">
-      <app-flight-details></app-flight-details>
+      <router-outlet></router-outlet>
     </section>
   </section>

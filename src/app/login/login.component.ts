@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticateService } from '../services/authenticate.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _authenticateSerivce: AuthenticateService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
         this.loginSuccessful = true;
         this.loginSuccessful = true;
         this.failedMessage = '';
+        this.router.navigateByUrl('/dashboard');
       } else {
         this.loginSuccessful = false;
         this.failedMessage = 'Username or password not correct';

@@ -25,4 +25,9 @@ export class AuthenticateService {
     const url = this.baseURL + '/' + username;
     return this.http.get(url);
   }
+
+  saveUser(data: any) {
+    const url = this.baseURL + '/create';
+    return this.http.post(url, data);
+  }
 }

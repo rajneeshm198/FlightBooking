@@ -1,38 +1,63 @@
-<div class="flightBookForm" [ngClass]="{'show': showBookingForm}" >
+<div class="flightBookForm" [ngClass]="{'show': showBookingForm}">
     <h4>Book for your Flight</h4>
     <div class="selectUsers">
         <h5>Number of passengers</h5>
-        <input type="number" value="1" />
+        <input type="number" value="1" name="passengersCount" (change)="handlePassengersCount($event)" />
         <div class="flightCost">
             <h5>Total Cost: </h5>
-            <div class="price">${{5000*2}}</div>
+            <div class="price" *ngIf="!isBusiness">${{5000 * passengersCount}}</div>
+            <div class="price" *ngIf="isBusiness">${{5000*passengersCount | discount}} - (10% Off for Business Booking)
+            </div>
         </div>
     </div>
     <div class="userDetailsForm">
         <div class="primaryUserDetailsForm">
             <h4>Primary User Details</h4>
-            <form ngForm>
+            <form ngForm (ngSubmit)="saveUser()">
                 <div class="formField">
-                    <h5>Name</h5>
-                    <input type="text" required placeholder="Your name" />
+                    <h5>First Name</h5>
+                    <input type="text" name="name" required placeholder="Your name" [(ngModel)]="name" />
+                </div>
+                <div class="formField">
+                    <h5>Last Name</h5>
+                    <input type="text" name="name" required placeholder="Your name" [(ngModel)]="name" />
                 </div>
                 <div class="formField">
                     <h5>Age</h5>
-                    <input type="number" required placeholder="Your age" />
+                    <input type="number" name="age" required placeholder="Your age" [(ngModel)]="age" />
                 </div>
                 <div class="formField">
                     <h5>Email</h5>
-                    <input type="email" required placeholder="Your email address" />
+                    <input type="email" name="email" required placeholder="Your email address" [(ngModel)]="email" />
                 </div>
                 <div class="formField">
                     <h5>Contact Number</h5>
-                    <input type="tel" required placeholder="Phone number" />
+                    <input type="tel" name="contactNumber" required placeholder="Phone number"
+                        [(ngModel)]="contactNumber" />
                 </div>
+                <button type="submit">Save User</button>
+            </form>
+            <form ngForm ngNativeValidate>
+                <div class="formField">
+                    <h5>Name on card</h5>
+                    <input type="text" name="name" required placeholder="Your name on card" [(ngModel)]="name" />
+                </div>
+                <div class="formField">
+                    <h5>Card Number</h5>
+                    <input type="text" name="cardNumber" required placeholder="Your card number" [(ngModel)]="name" />
+                </div>
+                <div class="formField">
+                    <h5>Expiry Date</h5>
+                    <input type="date" required />
+                </div>
+                <button type="submit">confirm Booking</button>
             </form>
         </div>
     </div>
     <div class="confirmFlightBooking">
-        <button type="button">Confirm Booking</button>
         <button type="button" (click)="hideFlightBookFormHandler()">Cancel Booking</button>
     </div>
+    <!-- <div class="bookingConfirmed">
+        <h3>Your Flight is confirmed</h3>
+    </div> -->
 </div>

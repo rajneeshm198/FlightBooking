@@ -1,31 +1,32 @@
-<div class="bookFlightContainer">
-    <div class="flightDetailsContainer">
-      <div class="flightNameDetails">
-        <div class="flightLogo">
-          <img src="./assets/airasialogo.png" width="20" alt="Air Asia" />
-        </div>
-        <div class="flightName">
-          <p>Air Asia</p>
-          <p>I5-314</p>
-        </div>
+<div class="bookFlightContainer" *ngFor='let flight of flightLists; let i = index'>
+  <div class="flightDetailsContainer">
+    <div class="flightNameDetails">
+      <div class="flightLogo">
+        <img [src]="flight.logo" width="20" alt="Air Asia" />
       </div>
-      <div class="flightTimeDetails">
-        <div class="flightTime">
-          <p>5:45</p>
-          <p>Noida</p>
-        </div>
-        <div class="dashed"></div>
-        <div class="flightTime">
-          <p>5:45</p>
-          <p>Banglore</p>
-        </div>
+      <div class="flightName">
+        <p>{{flight.company}}</p>
+        <p>{{flight.id}}</p>
       </div>
-      <div class="duration">
-        <p>2h 10m</p>
-        <p>Non Stop</p>
-      </div>
-      <button type="button" (click)="showFormHandler(true)">Book</button>
     </div>
-    <app-book-flight [showBookingForm]="showBookingForm" (hideFlightBookForm)="hideBookingFormHandler($event)"></app-book-flight>
-    
+    <div class="flightTimeDetails">
+      <div class="flightTime">
+        <p>{{flight.flight_departure_time}}</p>
+        <p>{{flight.fligt_departure_place}}</p>
+      </div>
+      <div class="dashed"></div>
+      <div class="flightTime">
+        <p>{{flight.flight_arrival_time}}</p>
+        <p>{{flight.fligt_arrival_place}}</p>
+      </div>
+    </div>
+    <div class="duration">
+      <p>{{flight.duration}}</p>
+      <p>{{flight.stops}}</p>
+    </div>
+    <button type="button" (click)="showFormHandler(true, i)">Book</button>
   </div>
+    <app-book-flight [showBookingForm]="flight.selected" (hideFlightBookForm)="showFormHandler($event, i)">
+  </app-book-flight>
+
+</div>
