@@ -1,3 +1,5 @@
+import { BookingConfirmedComponent } from './booking-confirmed/booking-confirmed.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { FlightDetailsComponent } from './flight-details/flight-details.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -10,10 +12,16 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
+    data: {
+      hideMenus: true
+    }
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: {
+      hideMenus: true,
+    }
   },
   {
     path: 'dashboard',
@@ -40,8 +48,12 @@ const routes: Routes = [
     component: ContactUsComponent
   },
   {
-    path: 'about-us',
-    component: ContactUsComponent
+    path: 'booking-confirmed',
+    component: BookingConfirmedComponent
+  },
+  {
+    path: 'sales-analytics',
+    component: PieChartComponent
   },
   {path: 'feedback', loadChildren: () => import('./modules/feedback/feedback.module').then(m => m.FeedbackModule)}
 ];

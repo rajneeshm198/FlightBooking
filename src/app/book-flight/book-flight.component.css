@@ -33,17 +33,17 @@
 
 .price {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 15px;
     color: #62cae7;
     margin-left: 10px;
     text-decoration: underline;
 }
 
 button {
-    padding: 15px 20px;
+    padding: 10px 30px;
     background: #62cae7;
     font-weight: bold;
-    margin: 20px 20px 0 0;
+    margin: 40px 20px 0 0;
 }
 
 /* Book flight form ends */
@@ -61,7 +61,7 @@ button {
     margin-bottom: 10px;
 }
 
-form {
+.formContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,3 +74,19 @@ form.formField {
 }
 
 /* User Details Form ends */
+
+.paymentForm h3 {
+    margin-top: 40px;
+}
+
+.formContainerPayment {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.formContainerPayment .formField {
+    flex: 1 1 40%;
+}

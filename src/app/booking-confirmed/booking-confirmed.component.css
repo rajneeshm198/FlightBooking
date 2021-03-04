@@ -1,0 +1,50 @@
+:host {
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bookingConfirmed {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgb(96 96 96 / 26%);
+    font-weight: bold;
+    text-align: left;
+}
+
+.flightNameDetails {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.flightName {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.flightTimeDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.flightTimeDetails h5 {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.dashed {
+    width: 40%;
+    height: 2px;
+    background: red;
+}

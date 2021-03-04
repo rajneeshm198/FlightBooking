@@ -11,6 +11,29 @@ header {
     flex: 1;
 }
 
+.welcomeText {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+    margin-top: 0;
+    position: relative;
+    top: -25px;
+    font-weight: bold;
+}
+
+.userInitials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    color: #f69d1d;
+}
+
 .App_Menu nav {
     display: flex;
     justify-content: flex-end;
@@ -22,6 +45,7 @@ header {
 
 .App_Menu nav a {
     margin: 5px 30px;
+    text-decoration: none;
 }
 
 .App_Menu nav a:hover {

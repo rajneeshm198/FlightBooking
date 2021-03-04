@@ -12,45 +12,54 @@
     </div>
     <div class="userDetailsForm">
         <div class="primaryUserDetailsForm">
-            <h4>Primary User Details</h4>
+            <h3>Primary User Details</h3>
             <form ngForm (ngSubmit)="saveUser()">
-                <div class="formField">
-                    <h5>First Name</h5>
-                    <input type="text" name="name" required placeholder="Your name" [(ngModel)]="name" />
-                </div>
-                <div class="formField">
-                    <h5>Last Name</h5>
-                    <input type="text" name="name" required placeholder="Your name" [(ngModel)]="name" />
-                </div>
-                <div class="formField">
-                    <h5>Age</h5>
-                    <input type="number" name="age" required placeholder="Your age" [(ngModel)]="age" />
-                </div>
-                <div class="formField">
-                    <h5>Email</h5>
-                    <input type="email" name="email" required placeholder="Your email address" [(ngModel)]="email" />
-                </div>
-                <div class="formField">
-                    <h5>Contact Number</h5>
-                    <input type="tel" name="contactNumber" required placeholder="Phone number"
-                        [(ngModel)]="contactNumber" />
+                <div class="formContainer">
+                    <div class="formField">
+                        <h5>First Name</h5>
+                        <input type="text" name="firstname" required placeholder="Your name" [(ngModel)]="firstname" />
+                    </div>
+                    <div class="formField">
+                        <h5>Last Name</h5>
+                        <input type="text" name="lastname" required placeholder="Your name" [(ngModel)]="lastname" />
+                    </div>
+                    <div class="formField">
+                        <h5>Age</h5>
+                        <input type="number" name="age" required placeholder="Your age" [(ngModel)]="age" />
+                    </div>
+                    <div class="formField">
+                        <h5>Email</h5>
+                        <input type="email" name="email" required placeholder="Your email address" [(ngModel)]="email" />
+                    </div>
+                    <div class="formField">
+                        <h5>Contact Number</h5>
+                        <input type="tel" name="contactNumber" required placeholder="Phone number"
+                            [(ngModel)]="contactNumber" />
+                    </div>
                 </div>
                 <button type="submit">Save User</button>
             </form>
-            <form ngForm ngNativeValidate>
-                <div class="formField">
-                    <h5>Name on card</h5>
-                    <input type="text" name="name" required placeholder="Your name on card" [(ngModel)]="name" />
+            <form ngForm ngNativeValidate class="paymentForm">
+                <h3>Make Payment</h3>
+                <div class="formContainerPayment">
+                    <div class="formField">
+                        <h5>Name on card</h5>
+                        <input type="text" name="name" required placeholder="Your name on card" [(ngModel)]="nameOnCard" />
+                    </div>
+                    <div class="formField">
+                        <h5>Card Number</h5>
+                        <input type="text" name="cardNumber" required placeholder="Your card number" [(ngModel)]="cardNumber" />
+                    </div>
+                    <div class="formField">
+                        <h5>Expiry Date</h5>
+                        <input type="date" name="date" required [(ngModel)]="expiryDate" />
+                    </div>
+                    <div class="formField">
+                        <h5>CVV</h5>
+                        <input type="number" name="cvv" placeholder="Enter CVV" required [(ngModel)]="cvv" />
+                    </div>
                 </div>
-                <div class="formField">
-                    <h5>Card Number</h5>
-                    <input type="text" name="cardNumber" required placeholder="Your card number" [(ngModel)]="name" />
-                </div>
-                <div class="formField">
-                    <h5>Expiry Date</h5>
-                    <input type="date" required />
-                </div>
-                <button type="submit">confirm Booking</button>
+                <button type="submit" (click)="confirmBooking()">confirm Booking</button>
             </form>
         </div>
     </div>

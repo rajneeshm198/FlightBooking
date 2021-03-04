@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
         this.loginSuccessful = true;
         this.failedMessage = '';
         this.router.navigateByUrl('/dashboard');
+        this._authenticateSerivce.loggedInUserDetails = res;
+        sessionStorage.setItem('userDetails', JSON.stringify(res));
       } else {
         this.loginSuccessful = false;
         this.failedMessage = 'Username or password not correct';

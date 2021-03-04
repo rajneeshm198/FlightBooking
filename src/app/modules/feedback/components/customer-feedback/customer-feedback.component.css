@@ -1,4 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+/* host points to the component selector */
 :host {
     width: 100%;
     display: flex;

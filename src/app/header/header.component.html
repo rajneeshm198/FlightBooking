@@ -6,19 +6,25 @@
     </div>
     <div class="App_Menu">
       <!-- Hamburger icon for mobile view -->
-      <div class="mobileViewIcon">
-        <button id="hamburgerIcon" type="button" class="hamburgerIcon" (click)="showMenuHandler()">
+      <h2 *ngIf="login" style="text-align: right; margin-right: 40px;">Welcome to Indian Airways</h2>
+      <div class="welcomeText" *ngIf="!login">
+        <div class="userInitials">{{loggedInUserDetails?.first_name[0] + loggedInUserDetails?.last_name[0]}}</div>
+        <p>Hi, {{loggedInUserDetails?.first_name}}</p>
+      </div>
+      <div class="mobileViewIcon" *ngIf="!login">
+        <button id="hamburgerIcon" type="button" class="hamburgerIcon" (click)="showMenuHandler(true)">
           <div></div>
           <div></div>
           <div></div>
         </button>
       </div>
-      <nav class="dashboardNavigation">
+      <nav class="dashboardNavigation" *ngIf="!login">
         <a [routerLink]="['/dashboard']">Home</a>
         <a [routerLink]="['/contact-us']">Contact Us</a>
-        <a [routerLink]="['/about-us']">About Us</a>
         <a [routerLink]="['/feedback/customer-feedback']">Feedback</a>
-        <a href="">Order History</a>
+        <a [routerLink]="['/sales-analytics']">Sales Analytics</a>
+        <a [routerLink]="['/sales-analytics']">Order History</a>
+        <a [routerLink]="['/login']" (click)="logoutUser()">Logout</a>
       </nav>
     </div>
   </header>
@@ -29,10 +35,11 @@
       <h4>Menus</h4>
       <a [routerLink]="['/dashboard']">Home</a>
       <a [routerLink]="['/contact-us']">Contact Us</a>
-      <a [routerLink]="['/about-us']">About Us</a>
       <a [routerLink]="['/feedback/customer-feedback']">Feedback</a>
+      <a [routerLink]="['/sales-analytics']">Sales Analytics</a>
+      <a [routerLink]="['/sales-analytics']">Order History</a>
     </nav>
-    <button id="hideDrawer">
+    <button id="hideDrawer" (click)="showMenuHandler(false)">
       Close
     </button>
   </div>
